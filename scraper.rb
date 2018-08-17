@@ -14,7 +14,7 @@ def get_votes_for(post, acc = [])
   acc
 end
 ############################################################
-client = ProductHunt::Client.new('eece91473bab619491135469ab62d3679707ef34abb1c08eb98b5e52a57fd2fb')
+client = ProductHunt::Client.new('ENTER YOUR SECRET HERE')
 posts = [ENTER NUMBERS HERE]
 ############################################################
 CSV.open("all_voters.csv", "a") do |csv|
