@@ -14,14 +14,16 @@ def get_votes_for(post, acc = [])
   acc
 end
 ############################################################
-client = ProductHunt::Client.new('ENTER_YOUR_DEV_TOKEN_HERE')
-posts = [Fill_This_With_IDs]
+client = ProductHunt::Client.new('eece91473bab619491135469ab62d3679707ef34abb1c08eb98b5e52a57fd2fb')
+posts = [ENTER NUMBERS HERE]
 ############################################################
-CSV.open("all_voters.csv", "a") do |csv| 
+CSV.open("all_voters.csv", "a") do |csv|
   posts.each do |post_id|
     post = client.post(post_id)
-    puts "Processing post #{post_id}: #{post['name']}"
-    voters = get_votes_for(post).map { |v| v['user']['twitter_username']}.uniq.compact.sort
+    puts "USER: #{post_id}: #{post['name']}"
+    voters = get_votes_for(post).map { |v|
+      puts "#{v['user']['twitter_username']}"
+       v['user']['twitter_username']}.uniq.compact.sort
     voters.each do |voter|
       csv << [voter]
     end
